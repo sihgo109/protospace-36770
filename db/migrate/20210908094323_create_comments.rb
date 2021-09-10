@@ -9,10 +9,3 @@ class CreateComments < ActiveRecord::Migration[6.0]
     end
   end
 end
-
-
-# | Column    | Type       | Options     |
-# | --------- | ---------- | ------------|
-# | text      | text       | null: false |
-# | user      | references | null: false |
-# | prototype | references | null: false |
