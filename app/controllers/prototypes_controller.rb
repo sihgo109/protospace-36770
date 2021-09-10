@@ -3,9 +3,6 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
-  #before_action :move_to_index, except: [:index, :show]
-  #before_action :set_prototype, only: [:edit, :show]
-
   def index
     @prototypes = Prototype.includes(:user)
     #@prototypes = Prototype.all.includes(:user)
@@ -37,7 +34,8 @@ class PrototypesController < ApplicationController
 
   def update
     if @prototype.update(prototype_params)
-      redirect_to root_path
+       redirect_to prototype_path  
+       #redirect_to root_path
     #prototype = Prototype.find(params[:id])
     # if prototype.update(prototype_params)
     #   redirect_to prototype_path
